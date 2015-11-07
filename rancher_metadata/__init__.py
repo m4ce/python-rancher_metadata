@@ -77,3 +77,9 @@ class MetadataAPI:
       return self.api_get("/self/container/hostname")
     else:
       return self.api_get("/containers/" + container + "/hostname")
+
+  def get_service_links(self, service = None):
+    if service is None:
+      return self.api_get("/self/service/links")
+    else:
+      return self.api_get("/services/" + service + "/links")
